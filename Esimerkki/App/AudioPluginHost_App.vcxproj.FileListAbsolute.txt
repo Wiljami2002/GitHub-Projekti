@@ -1,0 +1,4 @@
+G:\Koulu\JUCE\JUCE\extras\AudioPluginHost\Builds\VisualStudio2019\x64\Debug\App\AudioPluginHost.exe
+G:\Koulu\JUCE\JUCE\extras\AudioPluginHost\Builds\VisualStudio2019\x64\Debug\App\AudioPluginHost.pdb
+G:\Koulu\JUCE\JUCE\extras\AudioPluginHost\Builds\VisualStudio2019\x64\Debug\App\AudioPluginHost.exe.lastcodeanalysissucceeded
+G:\Koulu\JUCE\JUCE\extras\AudioPluginHost\Builds\VisualStudio2019\x64\Debug\App\NativeCodeAnalysis.read.1.tlog

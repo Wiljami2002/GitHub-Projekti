@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\text\</FILEPATH>
+      <FILENAME>juce_CharPointer_UTF16.h</FILENAME>
+      <LINE>242</LINE>
+      <COLUMN>57</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::CharPointer_UTF16::sizeInBytes</FUNCTION>
+    <DECORATED>?sizeInBytes@CharPointer_UTF16@juce@@QEBA_KXZ</DECORATED>
+    <FUNCLINE>240</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\memory\</FILEPATH>
+      <FILENAME>juce_ReferenceCountedObject.h</FILENAME>
+      <LINE>200</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>juce::SingleThreadedReferenceCountedObject::{ctor}</FUNCTION>
+    <DECORATED>??0SingleThreadedReferenceCountedObject@juce@@IEAA@$$QEAV01@@Z</DECORATED>
+    <FUNCLINE>200</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\memory\</FILEPATH>
+      <FILENAME>juce_ReferenceCountedObject.h</FILENAME>
+      <LINE>204</LINE>
+      <COLUMN>42</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>juce::SingleThreadedReferenceCountedObject::=</FUNCTION>
+    <DECORATED>??4SingleThreadedReferenceCountedObject@juce@@IEAAAEAV01@$$QEAV01@@Z</DECORATED>
+    <FUNCLINE>204</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_events\interprocess\</FILEPATH>
+      <FILENAME>juce_NetworkServiceDiscovery.h</FILENAME>
+      <LINE>87</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'juce::NetworkServiceDiscovery::Service::port' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>juce::NetworkServiceDiscovery::Service::{ctor}</FUNCTION>
+    <DECORATED>??0Service@NetworkServiceDiscovery@juce@@QEAA@XZ</DECORATED>
+    <FUNCLINE>87</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>juce::NetworkServiceDiscovery::Service::port</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_events\native\</FILEPATH>
+      <FILENAME>juce_win32_Messaging.cpp</FILENAME>
+      <LINE>291</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'OleInitialize'.</DESCRIPTION>
+    <FUNCTION>juce::MessageManager::doPlatformSpecificInitialisation</FUNCTION>
+    <DECORATED>?doPlatformSpecificInitialisation@MessageManager@juce@@CAXXZ</DECORATED>
+    <FUNCLINE>289</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

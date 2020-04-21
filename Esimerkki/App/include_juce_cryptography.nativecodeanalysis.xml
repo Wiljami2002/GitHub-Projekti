@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\text\</FILEPATH>
+      <FILENAME>juce_CharPointer_UTF16.h</FILENAME>
+      <LINE>242</LINE>
+      <COLUMN>57</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::CharPointer_UTF16::sizeInBytes</FUNCTION>
+    <DECORATED>?sizeInBytes@CharPointer_UTF16@juce@@QEBA_KXZ</DECORATED>
+    <FUNCLINE>240</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\memory\</FILEPATH>
+      <FILENAME>juce_ReferenceCountedObject.h</FILENAME>
+      <LINE>200</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>juce::SingleThreadedReferenceCountedObject::{ctor}</FUNCTION>
+    <DECORATED>??0SingleThreadedReferenceCountedObject@juce@@IEAA@$$QEAV01@@Z</DECORATED>
+    <FUNCLINE>200</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\memory\</FILEPATH>
+      <FILENAME>juce_ReferenceCountedObject.h</FILENAME>
+      <LINE>204</LINE>
+      <COLUMN>42</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>juce::SingleThreadedReferenceCountedObject::=</FUNCTION>
+    <DECORATED>??4SingleThreadedReferenceCountedObject@juce@@IEAAAEAV01@$$QEAV01@@Z</DECORATED>
+    <FUNCLINE>204</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_cryptography\encryption\</FILEPATH>
+      <FILENAME>juce_BlowFish.cpp</FILENAME>
+      <LINE>181</LINE>
+      <COLUMN>41</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::BlowFish::{ctor}</FUNCTION>
+    <DECORATED>??0BlowFish@juce@@QEAA@PEBXH@Z</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_cryptography\hashing\</FILEPATH>
+      <FILENAME>juce_Whirlpool.cpp</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>34</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::WhirlpoolProcessor::add</FUNCTION>
+    <DECORATED>?add@WhirlpoolProcessor@juce@@AEAAXPEBEH@Z</DECORATED>
+    <FUNCLINE>64</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_cryptography\hashing\</FILEPATH>
+      <FILENAME>juce_Whirlpool.cpp</FILENAME>
+      <LINE>143</LINE>
+      <COLUMN>58</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::WhirlpoolProcessor::finalize</FUNCTION>
+    <DECORATED>?finalize@WhirlpoolProcessor@juce@@AEAAXPEAE@Z</DECORATED>
+    <FUNCLINE>134</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_cryptography\hashing\</FILEPATH>
+      <FILENAME>juce_Whirlpool.cpp</FILENAME>
+      <LINE>150</LINE>
+      <COLUMN>54</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::WhirlpoolProcessor::finalize</FUNCTION>
+    <DECORATED>?finalize@WhirlpoolProcessor@juce@@AEAAXPEAE@Z</DECORATED>
+    <FUNCLINE>134</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

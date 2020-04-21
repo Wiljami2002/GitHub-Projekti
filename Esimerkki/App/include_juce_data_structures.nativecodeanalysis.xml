@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\text\</FILEPATH>
+      <FILENAME>juce_CharPointer_UTF16.h</FILENAME>
+      <LINE>242</LINE>
+      <COLUMN>57</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::CharPointer_UTF16::sizeInBytes</FUNCTION>
+    <DECORATED>?sizeInBytes@CharPointer_UTF16@juce@@QEBA_KXZ</DECORATED>
+    <FUNCLINE>240</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\memory\</FILEPATH>
+      <FILENAME>juce_ReferenceCountedObject.h</FILENAME>
+      <LINE>200</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>juce::SingleThreadedReferenceCountedObject::{ctor}</FUNCTION>
+    <DECORATED>??0SingleThreadedReferenceCountedObject@juce@@IEAA@$$QEAV01@@Z</DECORATED>
+    <FUNCLINE>200</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\memory\</FILEPATH>
+      <FILENAME>juce_ReferenceCountedObject.h</FILENAME>
+      <LINE>204</LINE>
+      <COLUMN>42</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>juce::SingleThreadedReferenceCountedObject::=</FUNCTION>
+    <DECORATED>??4SingleThreadedReferenceCountedObject@juce@@IEAAAEAV01@$$QEAV01@@Z</DECORATED>
+    <FUNCLINE>204</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_data_structures\values\</FILEPATH>
+      <FILENAME>juce_ValueTreeSynchroniser.cpp</FILENAME>
+      <LINE>56</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'juce::ValueTreeSynchroniserHelpers::ChangeType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>juce::ValueTreeSynchroniserHelpers::writeHeader</FUNCTION>
+    <DECORATED>?writeHeader@ValueTreeSynchroniserHelpers@juce@@YAXAEAVMemoryOutputStream@2@W4ChangeType@12@@Z</DECORATED>
+    <FUNCLINE>56</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_data_structures\app_properties\</FILEPATH>
+      <FILENAME>juce_ApplicationProperties.cpp</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'juce::PropertiesFile::StorageFormat' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>juce::PropertiesFile::Options::=</FUNCTION>
+    <DECORATED>??4Options@PropertiesFile@juce@@QEAAAEAU012@AEBU012@@Z</DECORATED>
+    <FUNCLINE>164</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_data_structures\app_properties\</FILEPATH>
+      <FILENAME>juce_PropertiesFile.cpp</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>41</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'juce::File::SpecialLocationType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>juce::PropertiesFile::Options::getDefaultFile</FUNCTION>
+    <DECORATED>?getDefaultFile@Options@PropertiesFile@juce@@QEBA?AVFile@3@XZ</DECORATED>
+    <FUNCLINE>52</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\containers\</FILEPATH>
+      <FILENAME>juce_ArrayBase.h</FILENAME>
+      <LINE>524</LINE>
+      <COLUMN>40</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::ArrayBase&lt;juce::ValueTree::SharedObject *,juce::DummyCriticalSection&gt;::moveInternal</FUNCTION>
+    <DECORATED>??$moveInternal@PEAVSharedObject@ValueTree@juce@@@?$ArrayBase@PEAVSharedObject@ValueTree@juce@@VDummyCriticalSection@3@@juce@@AEAAXHH@Z</DECORATED>
+    <FUNCLINE>515</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>G:\Koulu\JUCE\JUCE\modules\juce_core\containers\</FILEPATH>
+      <FILENAME>juce_ArrayBase.h</FILENAME>
+      <LINE>530</LINE>
+      <COLUMN>44</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>juce::ArrayBase&lt;juce::ValueTree::SharedObject *,juce::DummyCriticalSection&gt;::moveInternal</FUNCTION>
+    <DECORATED>??$moveInternal@PEAVSharedObject@ValueTree@juce@@@?$ArrayBase@PEAVSharedObject@ValueTree@juce@@VDummyCriticalSection@3@@juce@@AEAAXHH@Z</DECORATED>
+    <FUNCLINE>515</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
