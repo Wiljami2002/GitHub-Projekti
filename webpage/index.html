@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Audio</title>
+
+  <!-- CSS  -->
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Esteban' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- add logo -->
+	<div class="topnav">
+		<div class="container">
+		<div class="section">
+			<div class= "logo"><href ="#"><img src ="logo.png"></a>
+			<div class="row">
+			<div class="col s12 center">
+			<h5 class="header center black-text">MINI</h5>
+			</div>
+			</div>
+			</div>
+		</div>		
+	</div>
+</div>
+	</div>
+	
+	 <div class="container">
+		<div class="section">
+        <div class="col20 s12 m4">
+          <div class="icon-block">
+          </div>
+        </div>
+     </div>
+   </div>
+   
+<!-- Text and boutton -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h4 class="header center black-text">OHJELMAN NIMI</4h>
+      <div class="row center">
+        <h5 class="header col s12 light">TEKSTI</h5>
+      </div>
+      <div class="row center">
+        <a href= "#" id="download-button arrow_downward" class="btn-large waves-effect red"><i class="material-icons right">arrow_downward</i>Lataa ohjelma</a>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+        <div class="col20 s12 m4">
+          <div class="icon-block">
+          </div>
+        </div>
+     </div>
+   </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="pic.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- add -->
+ <div class="about-section">
+  <h4>About the program</h4>
+  <p>Some text about what the program and what it does.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!-- Slider -->
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="pic3.jpeg" style="width:100%">
+  <div class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="pic3.jpeg" style="width:100%">
+  <div class="text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="pic3.jpeg" style="width:100%">
+  <div class="text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+</script>
+
+<!-- end of slider -->
+
+<div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text background red"></i></h3>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="pic3.jpeg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="about-section">
+  <h5>Contact Us</h5>
+  <p>Shähköposti: aaa@gmail.com</p>
+  <p>Puh. 044 44444 88</p>
+</div>
+    <div class="footer-copyright">
+      <div class="container">
+	   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+<div class="Social-media">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 center">
+	<ul>
+        <li><i class="fab fa-facebook-f"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="fab fa-youtube"></i></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--  Social-media-->
+
+	  
+  </body>
+</html>
