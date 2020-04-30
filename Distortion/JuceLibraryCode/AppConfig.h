@@ -59,7 +59,6 @@
 #define JUCE_MODULE_AVAILABLE_juce_core                     1
 #define JUCE_MODULE_AVAILABLE_juce_cryptography             1
 #define JUCE_MODULE_AVAILABLE_juce_data_structures          1
-#define JUCE_MODULE_AVAILABLE_juce_dsp                      1
 #define JUCE_MODULE_AVAILABLE_juce_events                   1
 #define JUCE_MODULE_AVAILABLE_juce_graphics                 1
 #define JUCE_MODULE_AVAILABLE_juce_gui_basics               1
@@ -239,29 +238,6 @@
 #endif
 
 //==============================================================================
-// juce_dsp flags:
-
-#ifndef    JUCE_ASSERTION_FIRFILTER
- //#define JUCE_ASSERTION_FIRFILTER 1
-#endif
-
-#ifndef    JUCE_DSP_USE_INTEL_MKL
- //#define JUCE_DSP_USE_INTEL_MKL 0
-#endif
-
-#ifndef    JUCE_DSP_USE_SHARED_FFTW
- //#define JUCE_DSP_USE_SHARED_FFTW 0
-#endif
-
-#ifndef    JUCE_DSP_USE_STATIC_FFTW
- //#define JUCE_DSP_USE_STATIC_FFTW 0
-#endif
-
-#ifndef    JUCE_DSP_ENABLE_SNAP_TO_ZERO
- //#define JUCE_DSP_ENABLE_SNAP_TO_ZERO 1
-#endif
-
-//==============================================================================
 // juce_events flags:
 
 #ifndef    JUCE_EXECUTE_APP_SUSPEND_ON_BACKGROUND_TASK
@@ -356,25 +332,25 @@
  #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "rama-projekti"
+ #define JucePlugin_Name                   "Distortion"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "rama-projekti"
+ #define JucePlugin_Desc                   "Distortion"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "team rama"
+ #define JucePlugin_Manufacturer           "yourcompany"
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
- #define JucePlugin_ManufacturerWebsite    "coming soon"
+ #define JucePlugin_ManufacturerWebsite    ""
 #endif
 #ifndef  JucePlugin_ManufacturerEmail
- #define JucePlugin_ManufacturerEmail      "moi@moi.moi"
+ #define JucePlugin_ManufacturerEmail      ""
 #endif
 #ifndef  JucePlugin_ManufacturerCode
  #define JucePlugin_ManufacturerCode       0x4d616e75 // 'Manu'
 #endif
 #ifndef  JucePlugin_PluginCode
- #define JucePlugin_PluginCode             0x506d6967 // 'Pmig'
+ #define JucePlugin_PluginCode             0x57766632 // 'Wvf2'
 #endif
 #ifndef  JucePlugin_IsSynth
  #define JucePlugin_IsSynth                0
@@ -416,16 +392,16 @@
  #define JucePlugin_AUSubType              JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_AUExportPrefix
- #define JucePlugin_AUExportPrefix         ramaprojektiAU
+ #define JucePlugin_AUExportPrefix         DistortionAU
 #endif
 #ifndef  JucePlugin_AUExportPrefixQuoted
- #define JucePlugin_AUExportPrefixQuoted   "ramaprojektiAU"
+ #define JucePlugin_AUExportPrefixQuoted   "DistortionAU"
 #endif
 #ifndef  JucePlugin_AUManufacturerCode
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.TeamRama.ramaprojekti
+ #define JucePlugin_CFBundleIdentifier     com.yourcompany.Distortion
 #endif
 #ifndef  JucePlugin_RTASCategory
  #define JucePlugin_RTASCategory           0
@@ -443,7 +419,7 @@
  #define JucePlugin_RTASDisableMultiMono   0
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          com.TeamRama.ramaprojekti
+ #define JucePlugin_AAXIdentifier          com.yourcompany.Distortion
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -467,7 +443,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "team rama: rama-projekti"
+ #define JucePlugin_IAAName                "yourcompany: Distortion"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16

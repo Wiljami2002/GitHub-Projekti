@@ -33,7 +33,9 @@ private:
     
     RamaprojektiAudioProcessor& processor;
     
-    Slider audioVolume; // [1]
+    Slider preGain; // [1]
+    Slider postGain; //  [2]
+    
     
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RamaprojektiAudioProcessorEditor)

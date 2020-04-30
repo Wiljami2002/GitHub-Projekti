@@ -20,13 +20,22 @@ RamaprojektiAudioProcessorEditor::RamaprojektiAudioProcessorEditor (Ramaprojekti
     setSize (800, 200);
     
         // these define the parameters of our slider object
-    audioVolume.setSliderStyle (Slider::LinearBarVertical);
-    audioVolume.setRange(0.0, 127.0, 1.0);
-    audioVolume.setTextBoxStyle (Slider::NoTextBox, false, 90, 0);
-    audioVolume.setPopupDisplayEnabled (false, false, this);
-    audioVolume.setTextValueSuffix ("inputGain");
-    audioVolume.setValue(50.0);
-    addAndMakeVisible (&audioVolume);
+    preGain.setSliderStyle (Slider::LinearBarVertical);
+    preGain.setRange(0.0, 127.0, 1.0);
+    preGain.setTextBoxStyle (Slider::NoTextBox, false, 90, 0);
+    preGain.setPopupDisplayEnabled (false, false, this);
+    preGain.setTextValueSuffix ("preGain");
+    preGain.setValue(50.0);
+    addAndMakeVisible (&preGain);
+    
+    
+    postGain.setSliderStyle (Slider::LinearBarVertical);
+    postGain.setRange(0.0, 127.0, 1.0);
+    postGain.setTextBoxStyle (Slider::NoTextBox, false, 90, 0);
+    postGain.setPopupDisplayEnabled (false, false, this);
+    postGain.setTextValueSuffix ("postGain");
+    postGain.setValue(50.0);
+    addAndMakeVisible (&postGain);
     
 
 }
@@ -48,7 +57,8 @@ void RamaprojektiAudioProcessorEditor::paint (Graphics& g)
     // set the font size and draw text to the screen
     g.setFont (15.0f);
  
-    g.drawFittedText ("input Gain", 0, 0, getWidth(), 30, Justification::centred, 1);
+    g.drawFittedText ("input Gain", 2, 0, getWidth(), 50, Justification::centred, 1);
+    g.drawFittedText ("output Gain", -2, 0, getWidth(), 30, Justification::centred, 1);
 }
 
 void RamaprojektiAudioProcessorEditor::resized()
@@ -56,6 +66,7 @@ void RamaprojektiAudioProcessorEditor::resized()
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
     
-    audioVolume.setBounds (40, 30, 20, getHeight() - 60);
+    preGain.setBounds (40, 30, 20, getHeight() - 60);
+    postGain.setBounds (140, 81, 73, getHeight() - 102);
     
 }

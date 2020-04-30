@@ -12,7 +12,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-RamaprojektiAudioProcessor::RamaprojektiAudioProcessor()
+DistortionAudioProcessor::DistortionAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
@@ -24,19 +24,20 @@ RamaprojektiAudioProcessor::RamaprojektiAudioProcessor()
                        )
 #endif
 {
+
 }
 
-RamaprojektiAudioProcessor::~RamaprojektiAudioProcessor()
+DistortionAudioProcessor::~DistortionAudioProcessor()
 {
 }
 
 //==============================================================================
-const String RamaprojektiAudioProcessor::getName() const
+const String DistortionAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool RamaprojektiAudioProcessor::acceptsMidi() const
+bool DistortionAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -45,7 +46,7 @@ bool RamaprojektiAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool RamaprojektiAudioProcessor::producesMidi() const
+bool DistortionAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -54,7 +55,7 @@ bool RamaprojektiAudioProcessor::producesMidi() const
    #endif
 }
 
-bool RamaprojektiAudioProcessor::isMidiEffect() const
+bool DistortionAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -63,50 +64,50 @@ bool RamaprojektiAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double RamaprojektiAudioProcessor::getTailLengthSeconds() const
+double DistortionAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int RamaprojektiAudioProcessor::getNumPrograms()
+int DistortionAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int RamaprojektiAudioProcessor::getCurrentProgram()
+int DistortionAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void RamaprojektiAudioProcessor::setCurrentProgram (int index)
+void DistortionAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const String RamaprojektiAudioProcessor::getProgramName (int index)
+const String DistortionAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void RamaprojektiAudioProcessor::changeProgramName (int index, const String& newName)
+void DistortionAudioProcessor::changeProgramName (int index, const String& newName)
 {
 }
 
 //==============================================================================
-void RamaprojektiAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void DistortionAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
 
-void RamaprojektiAudioProcessor::releaseResources()
+void DistortionAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool RamaprojektiAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool DistortionAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     ignoreUnused (layouts);
@@ -129,61 +130,59 @@ bool RamaprojektiAudioProcessor::isBusesLayoutSupported (const BusesLayout& layo
 }
 #endif
 
-void RamaprojektiAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void DistortionAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
-    ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
-    auto totalNumOutputChannels = getTotalNumOutputChannels();
+	for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+	{
+		auto* channelData = buffer.getWritePointer(channel);
 
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
-    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
+		for (int i = 0; i < buffer.getNumSamples(); ++i) {
 
-        
-        
-        //testing the Distortion class
-        
-        
-        
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+			auto input = channelData[i];
+			auto cleanOut = channelData[i];
 
-        // ..do something to the data...
+			if (menuChoice == 1)
+			//Hard Clipping
+			{ 
+				if (input > thresh) 
+				{
+					input = thresh;
+				}
+				else if (input < -thresh) 
+				{
+					input = -thresh;
+				}
+				else
+				{
+					input = input;
+				}
+			}
+			
+			channelData[i] = ((1 - mix) * cleanOut) + (mix * input);
+		}
     }
 }
 
 //==============================================================================
-bool RamaprojektiAudioProcessor::hasEditor() const
+bool DistortionAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* RamaprojektiAudioProcessor::createEditor()
+AudioProcessorEditor* DistortionAudioProcessor::createEditor()
 {
-    return new RamaprojektiAudioProcessorEditor (*this);
+    return new DistortionAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void RamaprojektiAudioProcessor::getStateInformation (MemoryBlock& destData)
+void DistortionAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void RamaprojektiAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void DistortionAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -193,5 +192,6 @@ void RamaprojektiAudioProcessor::setStateInformation (const void* data, int size
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new RamaprojektiAudioProcessor();
+    return new DistortionAudioProcessor();
 }
+

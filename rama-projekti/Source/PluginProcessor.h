@@ -1,20 +1,94 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
-
-  ==============================================================================
-*/
 
 #pragma once
 
 #include <JuceHeader.h>
 
 //==============================================================================
-/**
-*/
+//==============================================================================
+//==============================================================================
+//==============================================================================
+
+// TOMAS CODE IS HERE
+
+//==============================================================================
+template <typename Type>
+class Distortion
+{
+public:
+    //==============================================================================
+    Distortion()
+                {
+        auto& waveshaper = processorChain.template get<waveshaperIndex>();
+        waveshaper.functionToUse = [] (Type x)
+                                   {
+                                       return std::tanh (x);           // [4]
+                                   };
+ 
+        auto& preGain = processorChain.template get<preGainIndex>();   // [5]
+        preGain.setGainDecibels ();                               // [6]
+ 
+        auto& postGain = processorChain.template get<postGainIndex>(); // [7]
+        postGain.setGainDecibels ();                             // [8]
+    }
+ 
+    
+    //==============================================================================
+    //PREPARE//=====================================================================
+    //==============================================================================
+    
+   void prepare (const juce::dsp::ProcessSpec& spec)
+    {
+        auto& filter = processorChain.template get<filterIndex>();
+        filter.state = FilterCoefs::makeFirstOrderHighPass (spec.sampleRate, 1000.0f);
+
+        processorChain.prepare (spec);
+    }
+    //==============================================================================
+    //PROCESS//=====================================================================
+    //==============================================================================
+    
+    template <typename ProcessContext>
+    void process (const ProcessContext& context) noexcept
+    {
+        processorChain.process (context);
+    }
+
+    //==============================================================================
+    // RESET//======================================================================
+    //==============================================================================
+    
+    void reset() noexcept
+{
+    processorChain.reset();        // [3]
+}
+
+private:
+    //==============================================================================
+    enum
+    {
+        filterIndex,
+        preGainIndex,
+        waveshaperIndex,
+        postGainIndex
+    };
+
+    using Filter = juce::dsp::IIR::Filter<Type>;
+    using FilterCoefs = juce::dsp::IIR::Coefficients<Type>;
+
+    juce::dsp::ProcessorChain<juce::dsp::ProcessorDuplicator<Filter, FilterCoefs>,
+                              juce::dsp::Gain<Type>, juce::dsp::WaveShaper<Type>, juce::dsp::Gain<Type>> processorChain;
+};
+    
+                    //TOMAS CODE Ends HERE
+
+
+//==============================================================================
+//==============================================================================
+//==============================================================================
+//==============================================================================
+
+
+
 class RamaprojektiAudioProcessor  : public AudioProcessor
 {
 public:
