@@ -19,25 +19,27 @@ RamaprojektiAudioProcessorEditor::RamaprojektiAudioProcessorEditor (Ramaprojekti
     // editor's size to whatever you need it to be.
     setSize (800, 200);
     
-        // these define the parameters of our slider object
-    preGain.setSliderStyle (Slider::LinearBarVertical);
-    preGain.setRange(0.0, 127.0, 1.0);
-    preGain.setTextBoxStyle (Slider::NoTextBox, false, 90, 0);
-    preGain.setPopupDisplayEnabled (false, false, this);
-    preGain.setTextValueSuffix ("preGain");
-    preGain.setValue(50.0);
-    addAndMakeVisible (&preGain);
+    dial1.setSliderStyle (Slider::Rotary);
+    dial1.setTextBoxStyle (Slider::NoTextBox, false, 0, 0);
+    dial1.setRotaryParameters(1, 180, 359);	
+    dial1.setRange(1, 10, 1);
+    addAndMakeVisible (dial1);
     
     
-    postGain.setSliderStyle (Slider::LinearBarVertical);
-    postGain.setRange(0.0, 127.0, 1.0);
-    postGain.setTextBoxStyle (Slider::NoTextBox, false, 90, 0);
-    postGain.setPopupDisplayEnabled (false, false, this);
-    postGain.setTextValueSuffix ("postGain");
-    postGain.setValue(50.0);
-    addAndMakeVisible (&postGain);
+    dial2.setSliderStyle (Slider::Rotary);
+    dial2.setTextBoxStyle (Slider::NoTextBox, false, 0, 0);
+    dial2.setRotaryParameters(1, 180, 359);	
+    dial2.setRange(1, 10, 1);
+    addAndMakeVisible (dial2);
     
-
+    dial3.setSliderStyle (Slider::Rotary);
+    dial3.setTextBoxStyle (Slider::NoTextBox, false, 0, 0);
+    dial3.setRotaryParameters(1, 180, 359);	
+    dial3.setRange(1, 10, 1);
+    addAndMakeVisible (dial3);
+    
+    
+   
 }
 
 RamaprojektiAudioProcessorEditor::~RamaprojektiAudioProcessorEditor()
@@ -57,16 +59,26 @@ void RamaprojektiAudioProcessorEditor::paint (Graphics& g)
     // set the font size and draw text to the screen
     g.setFont (15.0f);
  
-    g.drawFittedText ("input Gain", 2, 0, getWidth(), 50, Justification::centred, 1);
-    g.drawFittedText ("output Gain", -2, 0, getWidth(), 30, Justification::centred, 1);
 }
 
 void RamaprojektiAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+    dial1.setBounds(100, 50, 150, 50);
+    dial2.setBounds(100, 100, 200, 100);
+    dial3.setBounds(100, 150, 250, 150);
+	
     
-    preGain.setBounds (40, 30, 20, getHeight() - 60);
-    postGain.setBounds (140, 81, 73, getHeight() - 102);
-    
+}
+void RamaprojektiAudioProcessorEditor::sliderValueChanged(Slider *slider)
+{
+	if (&dial1 == slider) 
+	{
+	    dial1.getValue();
+	}
+	if (&dial2 == slider)
+	{
+	    dial2.getValue();
+	}
 }

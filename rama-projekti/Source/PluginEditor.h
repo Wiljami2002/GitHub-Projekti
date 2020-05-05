@@ -27,14 +27,17 @@ public:
     void resized() override;
 
 private:
+   void sliderValueChanged(Slider* sliderThatHasChanged) ;
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     
     
     RamaprojektiAudioProcessor& processor;
     
-    Slider preGain; // [1]
-    Slider postGain; //  [2]
+    Slider dial1;
+    Slider dial2;
+    Slider dial3;
+   
     
     
 
