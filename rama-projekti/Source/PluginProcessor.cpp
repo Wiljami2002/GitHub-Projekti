@@ -28,6 +28,8 @@ RamaprojektiAudioProcessor::RamaprojektiAudioProcessor()
 
 RamaprojektiAudioProcessor::~RamaprojektiAudioProcessor()
 {
+
+   
 }
 
 //==============================================================================

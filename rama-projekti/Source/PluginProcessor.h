@@ -25,10 +25,10 @@ public:
                                    };
  
         auto& preGain = processorChain.template get<preGainIndex>();   // [5]
-        preGain.setGainDecibels ();                               // [6]
+        preGain.setGainDecibels (dial1);                               // [6]
  
         auto& postGain = processorChain.template get<postGainIndex>(); // [7]
-        postGain.setGainDecibels ();                             // [8]
+        postGain.setGainDecibels (5.0f);                             // [8]
     }
  
     
